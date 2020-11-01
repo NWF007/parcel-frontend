@@ -1,0 +1,24 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/employee" (click)="onClose()">
+    <!-- Add icons if you want -->
+    <span class="nav-caption">Admin</span>
+  </a>
+  <a mat-list-item routerLink="/apply" (click)="onClose()">
+    <!-- Add icons if you want -->
+    <span class="nav-caption">Applications</span>
+  </a>
+  <a mat-list-item routerLink="/volunteer" (click)="onClose()">
+    <!-- Add icons if you want -->
+    <span class="nav-caption">Volunteers</span>
+  </a>
+  <a mat-list-item routerLink="/donation" (click)="onClose()">
+    <!-- Add icons if you want -->
+    <span class="nav-caption">Donations</span>
+  </a>
+  <mat-list-item>
+    <button mat-icon-button>
+      <mat-icon>eject</mat-icon>
+      <span class="nav-caption">Logout</span>
+    </button>
+  </mat-list-item>
+</mat-nav-list>

@@ -1,0 +1,30 @@
+<mat-toolbar color="accent">
+  <!-- implement sidenav from angular material for mobile -->
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSideNav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/">Home</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="25px" class="navigation-items">
+      <li>
+        <a routerLink="/employee">Admin</a>
+      </li>
+      <li>
+        <a routerLink="/apply">Applications</a>
+      </li>
+      <li>
+        <a routerLink="/volunteer">Volunteers</a>
+      </li>
+      <li>
+        <a routerLink="/donation">Donations</a>
+      </li>
+      <li>
+        <a style="cursor: pointer">Logout</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
