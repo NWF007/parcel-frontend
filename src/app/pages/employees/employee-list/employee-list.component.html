@@ -1,0 +1,43 @@
+<!-- <div fxLayoutAlign="center center">
+
+</div> -->
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="ID">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{ element.identityNumber }}
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{ element.firstName }}
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Surname">
+    <mat-header-cell *matHeaderCellDef>Surname</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{ element.lastName }}
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Employment Date">
+    <mat-header-cell *matHeaderCellDef>Start Date</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{ element.employmentDate | date }}
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Action">
+    <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="editEmployee(element.employeeNumber)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteEmployee(element.employeeNumber)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
