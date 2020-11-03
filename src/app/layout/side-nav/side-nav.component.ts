@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
@@ -8,7 +9,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SideNavComponent implements OnInit {
   @Output() closeSidenav = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }

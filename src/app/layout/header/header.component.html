@@ -10,19 +10,31 @@
   </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="25px" class="navigation-items">
-      <li>
-        <a routerLink="/employees">Admin</a>
+      <li *ngIf="router.url.startsWith('/employees') || router.url == '/'">
+        <a routerLink="/employees">Employees</a>
       </li>
-      <li>
+      <li *ngIf="router.url.startsWith('/apply') || router.url == '/'">
         <a routerLink="/apply">Applications</a>
       </li>
-      <li>
+      <li *ngIf="router.url.startsWith('/volunteer') || router.url == '/'">
         <a routerLink="/volunteer">Volunteers</a>
       </li>
-      <li>
-        <a routerLink="/donation">Donations</a>
+      <li *ngIf="router.url.startsWith('/donor') || router.url == '/'">
+        <a routerLink="/donor">Donors</a>
       </li>
-      <li>
+      <li *ngIf="router.url.startsWith('/delivery') || router.url == '/'">
+        <a routerLink="/delivery">Deliveries</a>
+      </li>
+      <li *ngIf="router.url.startsWith('/donor')" routerLink="/donation">
+        <a>Donations</a>
+      </li>
+      <li *ngIf="router.url.startsWith('/employees')">
+        <a routerLink="/job">Jobs</a>
+      </li>
+      <li *ngIf="router.url.startsWith('/volunteers')">
+        <a routerLink="/province">Province</a>
+      </li>
+      <li *ngIf="router.url !== '/'">
         <a style="cursor: pointer">Logout</a>
       </li>
     </ul>
