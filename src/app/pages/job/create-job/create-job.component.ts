@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Job } from 'src/app/models/job.model';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-create-job',
@@ -6,10 +9,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-job.component.css']
 })
 export class CreateJobComponent implements OnInit {
+  job: Job = new Job();
+  submitted = false;
 
-  constructor() { }
+  constructor(private jobService:JobService, private router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  newJob() : void{
+    this.submitted = false;
+    this.job = new Job();
+  }
+
+
+  save(){
+
+    this.jobService.createJob(this.job).subscribe(data => console.log(data), error => console.log(error));
+    this.job = new Job();
+  }
+
+  onSubmit(){
+    this.router.navigate(['/job']);
+    this.submitted = true;
+    this.save();
+
+  }
+
+  cancel(){
+    this.router.navigate(['/job']);
   }
 
 }

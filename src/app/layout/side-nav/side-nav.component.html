@@ -1,7 +1,11 @@
 <mat-nav-list>
   <a
     mat-list-item
-    *ngIf="router.url.startsWith('/employees') || router.url == '/'"
+    *ngIf="
+      router.url.startsWith('/employees/') ||
+      router.url == '/' ||
+      router.url.startsWith('/job')
+    "
     routerLink="/employees"
     (click)="onClose()"
   >
@@ -54,8 +58,10 @@
   </a>
   <a
     mat-list-item
-    *ngIf="router.url.startsWith('/employees')"
-    routerLink="/jobs"
+    *ngIf="
+      router.url.startsWith('/employees') || router.url.startsWith('/job/')
+    "
+    routerLink="/job"
     (click)="onClose()"
   >
     <span class="nav-caption"> Jobs </span>

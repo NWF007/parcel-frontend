@@ -10,7 +10,13 @@
   </div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="25px" class="navigation-items">
-      <li *ngIf="router.url.startsWith('/employees') || router.url == '/'">
+      <li
+        *ngIf="
+          router.url.startsWith('/employees/') ||
+          router.url == '/' ||
+          router.url.startsWith('/job')
+        "
+      >
         <a routerLink="/employees">Employees</a>
       </li>
       <li *ngIf="router.url.startsWith('/apply') || router.url == '/'">
@@ -28,7 +34,11 @@
       <li *ngIf="router.url.startsWith('/donor')" routerLink="/donation">
         <a>Donations</a>
       </li>
-      <li *ngIf="router.url.startsWith('/employees')">
+      <li
+        *ngIf="
+          router.url.startsWith('/employees') || router.url.startsWith('/job/')
+        "
+      >
         <a routerLink="/job">Jobs</a>
       </li>
       <li *ngIf="router.url.startsWith('/volunteers')">

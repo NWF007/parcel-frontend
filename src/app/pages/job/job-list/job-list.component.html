@@ -1,1 +1,41 @@
-<p>job-list works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <a
+      class="btn btn-dark"
+      style="color: white; float: right; margin-top: 10px"
+      routerLink="/job/create"
+      >Create Job</a
+    >
+  </div>
+
+  <div>
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="Job Number">
+        <mat-header-cell *matHeaderCellDef>Job Number</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.jobNumber }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Job Title">
+        <mat-header-cell *matHeaderCellDef>Job Title</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.jobTitle }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Action">
+        <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="editJob(element.jobNumber)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteJob(element.jobNumber)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+</div>

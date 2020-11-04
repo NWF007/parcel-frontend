@@ -9,6 +9,9 @@ import { UpdateDonorComponent } from './pages/donors/update-donor/update-donor.c
 import { EmployeeListComponent } from './pages/employees/employee-list/employee-list.component';
 import { UpdateEmployeeComponent } from './pages/employees/update-employee/update-employee.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CreateJobComponent } from './pages/job/create-job/create-job.component';
+import { JobListComponent } from './pages/job/job-list/job-list.component';
+import { UpdateJobComponent } from './pages/job/update-job/update-job.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UpdateVolunteerComponent } from './pages/volunteers/update-volunteer/update-volunteer.component';
 import { VolunteerListComponent } from './pages/volunteers/volunteer-list/volunteer-list.component';
@@ -49,6 +52,15 @@ const routes: Routes = [
   },
   {
     path: 'donor/update', component: UpdateDonorComponent
+  },
+  {
+    path: 'job', component: JobListComponent
+  },
+  {
+    path: 'job/update', component: UpdateJobComponent
+  },
+  {
+    path: 'job/create', component: CreateJobComponent
   }
 ];
 
