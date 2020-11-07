@@ -6,6 +6,7 @@ import { DeliveryListComponent } from './pages/deliveries/delivery-list/delivery
 import { UpdateDeliveryComponent } from './pages/deliveries/update-delivery/update-delivery.component';
 import { DonorListComponent } from './pages/donors/donor-list/donor-list.component';
 import { UpdateDonorComponent } from './pages/donors/update-donor/update-donor.component';
+import { CreateEmployeeComponent } from './pages/employees/create-employee/create-employee.component';
 import { EmployeeListComponent } from './pages/employees/employee-list/employee-list.component';
 import { UpdateEmployeeComponent } from './pages/employees/update-employee/update-employee.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path:'employees', component: EmployeeListComponent
+  },
+  {
+    path:'employee/create', component: CreateEmployeeComponent
   },
   {
     path: 'employees/update', component: UpdateEmployeeComponent

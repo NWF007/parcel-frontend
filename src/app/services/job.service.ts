@@ -14,40 +14,40 @@ export class JobService {
 
   createJob(job: Job): Observable<Job> {
     let username = 'admin';
-    let password = 'admin';
+    let password = 'admin123';
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
     return this.http.post<Job>(this.baseURL + '/create', job,
-    // {headers}
+    {headers}
     );
-  } //C
+  }
 
   findJobById(id: string): Observable<Job> {
     let username = 'admin';
-    let password = 'admin';
+    let password = 'admin123';
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
     return this.http.get<Job>(this.baseURL + '/find/' + id,
-    // {headers}
+    {headers}
     );
-  } //R
+  }
 
   updateJob(updateJob: Job): Observable<Job> {
     let username = 'admin';
-    let password = 'admin';
+    let password = 'admin123';
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
     return this.http.put<Job>(this.baseURL + '/update', updateJob,
-    // {headers}
+    {headers}
     );
-  } //U
+  }
 
-  deleteJob(id: string) {
+  deleteJob(id: string): Observable<any> {
     let username='admin';
-    let password ='admin';
+    let password ='admin123';
 
     const headers = new HttpHeaders({Authorization: 'Basic' + btoa(username + ':' + password)});
 
@@ -56,12 +56,12 @@ export class JobService {
 
   getAllJobs(): Observable<Job[]> {
     let username = 'admin';
-    let password = 'admin';
+    let password = 'admin123';
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
     return this.http.get<Job[]>(this.baseURL + '/all',
-    // {headers}
+    {headers}
     );
   }
 

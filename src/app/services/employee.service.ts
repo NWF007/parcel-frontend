@@ -14,49 +14,56 @@ export class EmployeeService {
 
   createEmployee(employee: Employee) : Observable<Employee>{
     let username = 'admin';
-    let password = 'admin';
+    let password = 'admin123';
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
     return this.http.post<Employee>(this.baseURL + '/create', employee,
-    // {headers}
+    {headers}
     );
   }
 
   findEmployeeById(id: string) : Observable<Employee> {
     let username = 'admin';
-    let password = 'admin';
+    let password = 'admin123';
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
     return this.http.get<Employee>(this.baseURL + '/find/' + id,
-    // {headers}
+    {headers}
     );
   }
 
   updateEmployee(updateEmployee: Employee): Observable<Employee>{
     let username = 'admin';
-    let password = 'admin';
+    let password = 'admin123';
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
     return this.http.put<Employee>(this.baseURL + '/update', updateEmployee,
-    // {headers}
+    {headers}
     );
   }
 
   deleteEmployee(id: string) : Observable<any>{
-    return this.http.delete(this.baseURL + '/delete/' + id);
+    let username = 'admin';
+    let password = 'admin123';
+
+    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
+
+    return this.http.delete(this.baseURL + '/delete/' + id,
+    {headers}
+    );
   }
 
   getAll() : Observable<Employee[]> {
     let username = 'admin';
-    let password = 'admin';
+    let password = 'admin123';
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
     return this.http.get<Employee[]>(this.baseURL + '/all',
-    // {headers}
+    {headers}
     );
   }
 

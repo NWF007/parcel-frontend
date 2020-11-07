@@ -30,9 +30,9 @@ export class CreateJobComponent implements OnInit {
   }
 
   onSubmit(){
-    this.router.navigate(['/job']);
     this.submitted = true;
     this.save();
+    this.router.navigate(['/job']);
 
   }
 
