@@ -16,6 +16,9 @@ import { UpdateJobComponent } from './pages/job/update-job/update-job.component'
 import { LoginComponent } from './pages/login/login.component';
 import { UpdateVolunteerComponent } from './pages/volunteers/update-volunteer/update-volunteer.component';
 import { VolunteerListComponent } from './pages/volunteers/volunteer-list/volunteer-list.component';
+import { CreateAccountingComponent } from './pages/accounting/create-accounting/create-accounting.component';
+import { AccountingListComponent } from './pages/accounting/accounting-list/accounting-list.component';
+import { UpdateAccountingComponent } from './pages/accounting/update-accounting/update-accounting.component';
 
 const routes: Routes = [
   {
@@ -32,6 +35,15 @@ const routes: Routes = [
   },
   {
     path: 'employees/update', component: UpdateEmployeeComponent
+  },
+  {
+    path: 'accounting', component: AccountingListComponent
+  },
+  {
+    path: 'accounting/create', component: CreateAccountingComponent
+  },
+  {
+    path: 'accounting/update', component: UpdateAccountingComponent
   },
   {
     path:'apply', component: ApplicationListComponent
