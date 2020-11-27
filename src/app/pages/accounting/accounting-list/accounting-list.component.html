@@ -1,1 +1,62 @@
-<p>accounting-list works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <a class="btn btn-dark" style="color: white; float: right; margin-top: 10px" routerLink="/accounting/create">Create Accounting</a
+      >
+    </div>
+    
+    <div>
+        <mat-table [dataSource]="dataSource">
+          <ng-container matColumnDef="Statement Id">
+            <mat-header-cell *matHeaderCellDef>Statement Id</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.statementId }}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="Income">
+            <mat-header-cell *matHeaderCellDef>Income</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.income }}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="Expense">
+            <mat-header-cell *matHeaderCellDef>Expense</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.expense }}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="Budget">
+            <mat-header-cell *matHeaderCellDef>Budget</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.budget }}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="Income Transaction Id">
+            <mat-header-cell *matHeaderCellDef>Income Transaction Id</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.incomeTransactionId }}
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="Expense Transaction Id">
+            <mat-header-cell *matHeaderCellDef>Expense Transaction Id</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.expenseTransactionId }}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Action">
+            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <button mat-icon-button (click)="editAccounting(element.statementId)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="deleteAccounting(element.statementId)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+    
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+    </div>
+</div>
