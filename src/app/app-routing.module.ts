@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AccountingListComponent } from './pages/accounting/accounting-list/accounting-list.component';
+import { CreateAccountingComponent } from './pages/accounting/create-accounting/create-accounting.component';
+import { UpdateAccountingComponent } from './pages/accounting/update-accounting/update-accounting.component';
 import { ApplicationListComponent } from './pages/applications/application-list/application-list.component';
 import { UpdateApplicationComponent } from './pages/applications/update-application/update-application.component';
 import { DeliveryListComponent } from './pages/deliveries/delivery-list/delivery-list.component';
@@ -16,6 +19,7 @@ import { UpdateJobComponent } from './pages/job/update-job/update-job.component'
 import { LoginComponent } from './pages/login/login.component';
 import { UpdateVolunteerComponent } from './pages/volunteers/update-volunteer/update-volunteer.component';
 import { VolunteerListComponent } from './pages/volunteers/volunteer-list/volunteer-list.component';
+
 
 const routes: Routes = [
   {
@@ -72,4 +76,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

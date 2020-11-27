@@ -24,7 +24,6 @@ export class CreateJobComponent implements OnInit {
 
 
   save(){
-
     this.jobService.createJob(this.job).subscribe(data => console.log(data), error => console.log(error));
     this.job = new Job();
   }
