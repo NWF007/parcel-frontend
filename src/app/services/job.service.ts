@@ -9,6 +9,7 @@ import { Job } from '../models/job.model';
 export class JobService {
   private baseURL: string = 'http://localhost:8888/job';
   private id: string;
+  private jobId: string;
 
   constructor(private http: HttpClient) {}
 
@@ -29,7 +30,7 @@ export class JobService {
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
-    return this.http.get<Job>(this.baseURL + '/find/' + id,
+    return this.http.get<Job>(this.baseURL + '/read/' + id,
     {headers}
     );
   }
@@ -49,10 +50,12 @@ export class JobService {
     let username='admin';
     let password ='admin123';
 
-    const headers = new HttpHeaders({Authorization: 'Basic' + btoa(username + ':' + password)});
+    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
 
+    if (confirm ('Are you sure you want to delete this?')) {
     return this.http.delete(this.baseURL + '/delete/' + id, {headers});
   }
+}
 
   getAllJobs(): Observable<Job[]> {
     let username = 'admin';
@@ -71,5 +74,13 @@ export class JobService {
 
   getId(): string {
     return this.id;
+  }
+
+  saveJobId(id: string){
+    this.jobId = id;
+  }
+
+  getJobId(): string {
+    return this.jobId;
   }
 }

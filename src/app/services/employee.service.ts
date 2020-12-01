@@ -51,9 +51,11 @@ export class EmployeeService {
 
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password) });
 
+    if (confirm ('Are you sure you want to delete this?')) {
     return this.http.delete(this.baseURL + '/delete/' + id,
     {headers}
     );
+    }
   }
 
   getAll() : Observable<Employee[]> {

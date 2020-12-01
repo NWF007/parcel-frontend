@@ -3,15 +3,15 @@
     fxLayout="column"
     fxLayoutAlign="center center"
     fxLayoutGap="10px"
-    #f="ngForm"
-    (ngSubmit)="onSubmit()"
+    #loginForm="ngForm"
+    (ngSubmit)="login()"
   >
     <mat-form-field>
       <input
         type="text"
         matInput
         placeholder="username"
-        ngModel
+        [(ngModel)]="userName"
         name="username"
         username
         required
@@ -25,21 +25,25 @@
         type="password"
         matInput
         placeholder="Your password"
-        ngModel
+        [(ngModel)]="passwords"
         name="password"
         required
         minlength="4"
         #pwInput="ngModel"
       />
-      <mat-hint align="end">{{ pwInput.value?.length }} / 4</mat-hint>
+      <mat-hint align="end">{{ pwInput.value?.length }} / 8</mat-hint>
       <mat-error>Has to be atleast 4 characters long</mat-error>
     </mat-form-field>
+
+    <div [hidden]="!invalidLogin" class="alert alert-danger">
+      Incorrect Credentials
+    </div>
 
     <button
       type="submit"
       mat-raised-button
       color="accent"
-      [disabled]="f.invalid"
+      [disabled]="loginForm.form.invalid"
     >
       Login
     </button>

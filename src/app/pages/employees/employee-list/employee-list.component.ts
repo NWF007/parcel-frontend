@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -16,10 +17,11 @@ export class EmployeeListComponent implements OnInit {
   displayedColumns = ["ID", "Name", "Surname", "Employment Date", "Action"];
   dataSource = new MatTableDataSource<Employee>();
 
-  constructor(private employeeService: EmployeeService, private router: Router) { }
+  constructor(private employeeService: EmployeeService, private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.getEmployees();
+    this.loginService.unhide();
   }
 
   getEmployees(){
@@ -39,6 +41,11 @@ export class EmployeeListComponent implements OnInit {
   editEmployee(id: string){
     this.employeeService.saveId(id);
     this.router.navigate(['/employees/update']);
+  }
+
+  editEmployeeJob(id: string){
+    this.employeeService.saveId(id);
+    this.router.navigate(['/employeejob/update']);
   }
 
 }

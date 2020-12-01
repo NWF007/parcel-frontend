@@ -11,6 +11,7 @@ import { DonorListComponent } from './pages/donors/donor-list/donor-list.compone
 import { UpdateDonorComponent } from './pages/donors/update-donor/update-donor.component';
 import { CreateEmployeeComponent } from './pages/employees/create-employee/create-employee.component';
 import { EmployeeListComponent } from './pages/employees/employee-list/employee-list.component';
+import { EmployeejobComponent } from './pages/employees/employeejob/employeejob.component';
 import { UpdateEmployeeComponent } from './pages/employees/update-employee/update-employee.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CreateJobComponent } from './pages/job/create-job/create-job.component';
@@ -21,12 +22,7 @@ import { UpdateVolunteerComponent } from './pages/volunteers/update-volunteer/up
 import { VolunteerListComponent } from './pages/volunteers/volunteer-list/volunteer-list.component';
 
 const routes: Routes = [
-  {
-    path:"", component: HomeComponent
-  },
-  {
-    path:"login", component: LoginComponent
-  },
+  {path: 'login', component: LoginComponent},
   {
     path:'employees', component: EmployeeListComponent
   },
@@ -35,6 +31,9 @@ const routes: Routes = [
   },
   {
     path: 'employees/update', component: UpdateEmployeeComponent
+  },
+  {
+    path: 'employeejob/update', component: EmployeejobComponent
   },
   {
     path: 'accounting', component: AccountingListComponent
@@ -77,7 +76,14 @@ const routes: Routes = [
   },
   {
     path: 'job/create', component: CreateJobComponent
-  }
+  },
+  {
+    path:"home", component: HomeComponent
+  },
+
+  {
+    path:'', redirectTo: "login", pathMatch: 'full'
+  },
 ];
 
 @NgModule({

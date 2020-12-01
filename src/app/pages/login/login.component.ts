@@ -29,20 +29,37 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(
-    // form: NgForm
+     form: NgForm
     ){
     // console.log(form);
     this.loginService.authenticate(this.userName, this.passwords).subscribe(data => {
 
       this.router.navigate(['/employees'])
       this.invalidLogin = false
-      // this.loginService.unhide();
+      this.loginService.unhide();
     },
     error => {
+      console.log("incorrect credentials");
       this.invalidLogin = true
     }
   );
 
   }
+
+  login(){
+
+    this.loginService.authenticate(this.userName, this.passwords).subscribe(data => {
+
+          this.router.navigate(['/home'])
+          this.invalidLogin = false
+          this.loginService.unhide();
+
+        },
+        error => {
+          this.invalidLogin = true
+        }
+      );
+
+    }
 
 }

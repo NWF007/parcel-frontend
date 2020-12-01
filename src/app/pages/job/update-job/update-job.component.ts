@@ -34,10 +34,13 @@ export class UpdateJobComponent implements OnInit {
   update(){
     this.jobService.updateJob(this.job).subscribe(jobs => {
       console.log(jobs);
+      this.job = jobs;
+      // this.job.jobNumber = this.job.jobNumber;
+      // this.job.jobTitle = this.job.jobTitle;
     }
-    // , err => {
-    //   console.log(err);
-    );
+    , err => {
+      console.log(err);
+    });
     this.router.navigate(['/job']);
   }
 

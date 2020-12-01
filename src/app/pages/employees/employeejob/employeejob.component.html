@@ -1,0 +1,46 @@
+<div class="container" style="margin-top: 10px">
+  <div class="card-header">
+    <h3>Employee Job Information</h3>
+  </div>
+
+  <div clas="card">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <mat-form-field>
+            <mat-label>Job title</mat-label>
+            <mat-select
+              ngModel
+              required
+              ame="jobTitle"
+              id="jobTitle"
+              name="jobTitle"
+            >
+              <mat-option *ngFor="let job of jobs" [value]="job.jobTitle">{{
+                job.jobTitle
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            class="btn btn-primary col-sm-12 col-md-2"
+            style="margin-right: 5px; margin-bottom: 5px"
+          >
+            Save
+          </button>
+
+          <button
+            (click)="cancel()"
+            class="btn btn-secondary col-sm-12 col-md-2"
+            style="margin-right: 5px; margin-bottom: 5px"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

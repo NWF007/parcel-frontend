@@ -37,6 +37,9 @@
   <ng-container matColumnDef="Action">
     <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
     <mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="editEmployeeJob(element.employeeNumber)">
+        <mat-icon>work</mat-icon>
+      </button>
       <button mat-icon-button (click)="editEmployee(element.employeeNumber)">
         <mat-icon>edit</mat-icon>
       </button>

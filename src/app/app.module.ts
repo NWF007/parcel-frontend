@@ -23,6 +23,7 @@ import { MatListModule} from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 import { UpdateEmployeeComponent } from './pages/employees/update-employee/update-employee.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateDonorComponent } from './pages/donors/create-donor/create-donor.component';
@@ -46,6 +47,7 @@ import { UpdateVolunteerComponent } from './pages/volunteers/update-volunteer/up
 import { CreateJobComponent } from './pages/job/create-job/create-job.component';
 import { JobListComponent } from './pages/job/job-list/job-list.component';
 import { UpdateJobComponent } from './pages/job/update-job/update-job.component';
+import { EmployeejobComponent } from './pages/employees/employeejob/employeejob.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +80,8 @@ import { UpdateJobComponent } from './pages/job/update-job/update-job.component'
     UpdateVolunteerComponent,
     CreateJobComponent,
     JobListComponent,
-    UpdateJobComponent
+    UpdateJobComponent,
+    EmployeejobComponent
   ],
   imports: [
     BrowserModule,
@@ -96,6 +99,7 @@ import { UpdateJobComponent } from './pages/job/update-job/update-job.component'
     MatInputModule,
     MatTableModule,
     NgbModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
